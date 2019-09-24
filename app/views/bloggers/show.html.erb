@@ -1,0 +1,12 @@
+
+
+<h1><%= @blogger.name %></h1>
+<h2><%= @blogger.age %></h2>
+<h2><%= @blogger.bio %></h2>
+<h3><%= @blogger.total_likes %></h3>
+<% if @blogger.most_liked%>
+<h3><%= link_to @blogger.most_liked.title , post_path(@blogger.most_liked)%></h3>
+<% else %>
+<h3>N/A</h3>
+<% end %>
+<%= button_to "Edit",{ action:"edit", id: @blogger.id}, method: :get%>

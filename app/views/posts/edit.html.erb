@@ -1,0 +1,17 @@
+<% if !@post.errors.empty?%>
+    <% @post.errors.full_messages.each do |message|%>
+    <%= message %><br>
+    <% end %>
+<% end %>
+
+
+<h1>Edit Post </h1>
+<%= form_for @post do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :content %>
+<%= f.text_field :content %>
+<%= f.label :likes %>
+<%= f.text_field :likes %>
+<%= f.submit %>
+<% end %>
